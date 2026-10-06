@@ -1,25 +1,76 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Lorenzo Cavazzini Site</title>
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
-    <hr>
-    <p>My first GitHub Pages site.</p>
-    <br> 
-    <p>This is meant to display different thingsZ</p>
-    <h2>Let's start with learning a few things
-    </h2>
-    <!-- Hyperlinks -->
-    <a href="https://github.com/lollocava00" target=_self title="you know where this takes you">
-      My GitHub page
-    </a>
-    <br>
-    <a href="research.html" target=_self>
-      Learn More about my research
-    </a>    
-    <hr>
-    <!-- Images -->
-  </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorenzo Cavazzini</title>
+    <link rel="stylesheet" href="mysite-style.css">
+</head>
+<header>
+    <nav>
+        <ul>
+            <li>Lorenzo Cavazzini <br>
+            Cosmology · Portfolio</li>
+            <li><a href="#about">About me</a></li>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#others">Others</a></li>
+        </ul>
+    </nav>
+</header>
+<body>
+    <section id="about">
+        <h2>About me</h2>
+        <img id="profile" src="images/profile.png" height="30%" width="30%"> 
+        <p>Master’s graduate in Astrophysics and Cosmology from the University of Bologna, primarily interested in methods for data analysis and statistics.
+           Competent in Bayesian data analysis and programming in Python. Proficient English speaker with good communication skills. Passionate about
+           science dissemination and intellectually stimulating activities that foster learning and the exchange of ideas.
+        </p>
+    </section>
+
+    <section id="research">
+        <h2>Research</h2>
+        <div>
+            <img src="images/millenium2.jpg" height="30%" width="30%">
+            <p>My research interests include:</p>
+            <ul>
+                <li>Dark Matter and Dark Energy</li>
+                <li>Cosmic Microwave Background Radiation</li>
+                <li>Large-Scale Structure of the Universe</li>
+                <li>Galaxy Formation and Evolution</li>
+                <li>Gravitational Lensing</li>
+            </ul>
+            <button onclick="window.location.href='research.html'">Read more</button>
+    </div>
+    </section>
+
+    <section id="publications">
+        <h2>Publications</h2>
+        <p>Here are some of my recent publications:
+            <ol>
+                <li><a href="publication1.pdf" target="_blank">First full‑shape joint analysis of the two‑ and three‑point correlation functions on
+                real data: ΛCDM cosmological constraints from BOSS DR12</a>Guidi, M. Moresco, M., Veropalumbo, A., Cavazzini, L., et.al.</li>
+            </ol>
+        </p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <div>
+            <ul>
+                <li><a href="mailto:lorenzo.cavazzini00@proton.me">Icon</a> lorenzo.cavazzini00@proton.me</li>
+                <li><a href="">Icon</a> LinkedIn</li>
+                <li><a href="https://github.com/lollocava00">Icon</a>Github</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="others">
+        <h2>Others</h2>
+    </section>
+</body>
+<footer>
+    <p>&copy; Lorenzo Cavazzini. All rights reserved.</p>
+</footer>
 </html>
