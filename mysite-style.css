@@ -34,7 +34,6 @@ nav a{
 }
 
 nav a:hover{
-    background-color: rgb(103, 98, 110);
     color: rgb(101, 47, 152);
 }
 
@@ -43,20 +42,53 @@ nav li{
     border: 1px solid rgb(122, 121, 123);
 }
 
+nav li:hover{
+    background-color: rgb(103, 98, 110);
+    color: rgb(101, 47, 152);
+}
+
 section{
     height: 100vh;
     margin-left: 220px;
     padding: 20px;
 }
 
-
-#profile{
+#profile-pic{
     float: left;
-    padding: 10px;
+    border-radius: 50%;
+    height: 30%;
+    width: 30%;
+    padding: 30px;
+}
+
+#research-box{
+    background-color: rgb(164, 164, 137);
+    border: 2px solid;
+    border-radius: 10px;
+    overflow: auto;
 }
 
 
+#contact-box{
+    background-color: rgb(164, 164, 137);
+    border: 2px solid;
+    border-radius: 10px;
+    overflow: auto;
+}
+
+#contact-box ul{
+    list-style-type: none;
+    padding: 20px;
+    margin: 20px;
+}
+
+#contact-box li{
+    padding: 10px;
+    border-bottom: 1px solid rgb(122, 121, 123);
+}
+
 footer{
+    color: rgb(142, 139, 145);
     margin-left: 220px;
     text-align: center;
 }
