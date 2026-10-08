@@ -1,21 +1,70 @@
+.first-color { 
+	background: #e7eaf6; 
+}
+	
+.second-color { 
+	background: #a2a8d3; 
+}
+
+.third-color { 
+	background: #38598b; 
+}
+
+.fourth-color { 
+	background: #113f67; 
+}
+
+
+header{
+    font-size: 16px;
+    font-style: bold;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
 body{
-    background-color:hsl(208, 100%, 97%) ;
+    background-color: #e7eaf6;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
 
-h2{
-    text-align: center;
+#lang-switch{
+    position: sticky;
+    display: flex;
+    justify-content: flex-end;
 }
+
+#lang-switch a{
+    color: #38598b;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+#lang-switch svg{
+    height: 24px;
+    width: auto;
+    border: solid 2px #38598b;
+    border-radius: 4px;
+}
+
+h2{
+    color:#113f67;
+    text-align: center;
+    text-decoration: underline solid #113f67 4px;
+    text-underline-offset: 10px;
+}
+
+p{color: #404042;}
 
 nav{
     position: fixed;
     left: 0;
     height: 100vh;
     margin: 0px;
-    background-color: hsl(210, 6%, 81%);
-    border-right: 1px solid rgb(122, 121, 123);
+    background-color: #a2a8d3;
+    border-right: 1px solid #38598b;
 }
 
 nav ul{
@@ -26,7 +75,7 @@ nav ul{
 }
 
 nav a{
-    color: rgb(142, 139, 145);
+    color: #38598b;
     text-decoration: none;
     padding: 10px;
     display: block;
@@ -34,61 +83,125 @@ nav a{
 }
 
 nav a:hover{
-    color: rgb(101, 47, 152);
+    color: #113f67;
 }
 
 nav li{
+    color: #38598b;
     padding: 20px;
-    border: 1px solid rgb(122, 121, 123);
+    border: 1px solid #38598b;
 }
 
 nav li:hover{
-    background-color: rgb(103, 98, 110);
-    color: rgb(101, 47, 152);
+    background-color: #8187b4;
 }
 
 section{
-    height: 100vh;
+    min-height: 100vh;
     margin-left: 220px;
     padding: 20px;
 }
 
-#profile-pic{
+#about-box{
+    background-color: #e7eaf6;
+    border: 2px solid #113f67;
+    border-radius: 80px;
+    overflow: auto;
+    border-left: none;
+}
+
+#about-box img{
     float: left;
     border-radius: 50%;
-    height: 30%;
-    width: 30%;
-    padding: 30px;
+    border: 2px solid #113f67;
+    height: auto;
+    width: 15%;
 }
 
-#research-box{
-    background-color: rgb(164, 164, 137);
-    border: 2px solid;
+#about-box h3{
+    text-align: center;
+    color: #113f67;
+}
+
+#about-box p{
+    padding: 40px;
+    text-align: justify;
+    margin-left: 180px;
+    line-height: 1.5;
+}
+
+#publications li{
+    color: #404042;
+}
+
+/* We use the box class for the research and contact sections */
+.box{
+    background-color: #a2a8d3;
+    border: 2px solid #113f67;
     border-radius: 10px;
     overflow: auto;
 }
 
-
-#contact-box{
-    background-color: rgb(164, 164, 137);
-    border: 2px solid;
-    border-radius: 10px;
-    overflow: auto;
+.box img{
+    height: auto;
+    width: 50%;
+    float: left;
+    margin-right: 30px;
 }
 
-#contact-box ul{
+.box p{
+    padding: 20px;
+    margin: 20px;
+    text-align: justify;
+    line-height: 1.4;
+}
+
+.box button{
+    background-color: #e7eaf6;
+    color: #113f67;
+    border-radius: 5px;
+    border: 2px solid #113f67;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 140px;
+    cursor: pointer;
+    padding: 10px 20px;
+}
+
+
+.box ul{
     list-style-type: none;
     padding: 20px;
     margin: 20px;
 }
 
-#contact-box li{
+.box li{
     padding: 10px;
-    border-bottom: 1px solid rgb(122, 121, 123);
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #113f67;
+}
+
+.box li a{
+    color: #113f67;
+    text-decoration: none;
+}
+
+.box li a:hover{
+    color: #38598b;
+}
+
+.box svg{
+    height: 24px;
+    width: auto;
 }
 
 footer{
     color: rgb(142, 139, 145);
     margin-left: 220px;
     text-align: center;
+    font-size: small;
 }
