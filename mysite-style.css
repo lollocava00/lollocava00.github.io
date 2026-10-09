@@ -116,10 +116,11 @@ section{
 
 #about-box{
     background-color: #e7eaf6;
-    border: 2px solid #113f67;
-    border-radius: 80px;
+    /* border: 2px solid #113f67;
+    border-radius: 80px; */
     overflow: auto;
     border-left: none;
+    margin: clamp(5px, 5vw, 100px);
 }
 
 #about-box img{
@@ -138,8 +139,11 @@ section{
 
 #about-box p{
     padding: 40px;
-    text-align: center;
     line-height: 1.5;
+}
+
+#publications-list{
+    margin: clamp(5px, 5vw, 100px);
 }
 
 #publications li{
@@ -161,6 +165,7 @@ section{
     border: 2px solid #113f67;
     border-radius: 10px;
     overflow: auto;
+    margin: clamp(5px, 1vw, 50px);
 }
 
 .box img{
@@ -276,7 +281,7 @@ footer{
 
     section{
         margin-left: 0;
-        padding: 20px;
+        padding: 5px;
     }
 
     #about-box{
