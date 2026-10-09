@@ -125,7 +125,7 @@ section{
     border-radius: 50%;
     border: 2px solid #113f67;
     height: auto;
-    max-width: 15%;
+    width: 20%;
 }
 
 #about-box h3{
@@ -163,8 +163,7 @@ section{
 
 .box img{
     height: auto;
-    max-width: 50%;
-    min-width: 30%;
+    width: 50%;
     float: left;
     margin-right: 30px;
 }
@@ -283,7 +282,8 @@ footer{
     }
 
     #about-box img{
-        width: 30%;
+        width: 50%;
+        height: auto;
         margin: 10px auto;
         display: block;
         float: none;
