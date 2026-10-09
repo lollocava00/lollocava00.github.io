@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 .first-color { 
 	background: #e7eaf6; 
 }
@@ -121,7 +125,7 @@ section{
     border-radius: 50%;
     border: 2px solid #113f67;
     height: auto;
-    width: 15%;
+    max-width: 15%;
 }
 
 #about-box h3{
@@ -159,7 +163,8 @@ section{
 
 .box img{
     height: auto;
-    width: 50%;
+    max-width: 50%;
+    min-width: 30%;
     float: left;
     margin-right: 30px;
 }
@@ -229,7 +234,7 @@ footer{
 /* Media queries for responsive design */
 @media screen and (max-width: 768px) {
     nav{
-        position: fixed;
+        position: sticky;
         top: 0;
         height: auto;
         width: 100%;
@@ -245,7 +250,8 @@ footer{
     nav ul{
         display: flex;
         flex-direction: row;
-        justify-content:space-around;
+        justify-content:space-evenly;
+        flex-wrap: wrap;
     }
 
     nav li{
@@ -263,7 +269,8 @@ footer{
         position: sticky;
         display: flex;
         justify-content: flex-end;
-        margin-top: 50px;
+        margin-top: 70px;
+        margin-block: 0px;
 }
 
     section{
