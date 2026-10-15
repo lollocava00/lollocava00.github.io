@@ -2,20 +2,12 @@
     box-sizing: border-box;
 }
 
-.first-color { 
-	background: #e7eaf6; 
-}
-	
-.second-color { 
-	background: #a2a8d3; 
-}
-
-.third-color { 
-	background: #38598b; 
-}
-
-.fourth-color { 
-	background: #113f67; 
+:root {
+    --background: #e7eaf6;
+    --text-color: #404042;
+    --color1: #b9bedf;
+    --color2: #38598b;
+    --color3: #113f67;
 }
 
 
@@ -26,11 +18,22 @@ header{
 }
 
 body{
-    background-color: #e7eaf6;
+    background-color: var(--background);
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+}
+
+
+.js .fade-up {
+    opacity: 0;
+    transform: translateY(48px);
+    transition: opacity 0.9s ease-out, transform 0.9s ease-out;
+}
+.js .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 #lang-switch{
@@ -40,7 +43,7 @@ body{
 }
 
 #lang-switch a{
-    color: #38598b;
+    color: var(--color2);
     text-decoration: none;
     padding: 10px;
     display: block;
@@ -49,84 +52,112 @@ body{
 #lang-switch svg{
     height: 24px;
     width: auto;
-    border: solid 2px #38598b;
+    border: solid 2px var(--color2);
     border-radius: 4px;
 }
 
 h2{
-    color:#113f67;
+    color: var(--color3);
     text-align: center;
-    text-decoration: underline solid #113f67 4px;
+    text-decoration: underline solid var(--color3) 4px;
     text-underline-offset: 10px;
     margin: 40px;
 }
 
-p{color: #404042;}
+p{color: var(--text-color);}
 
 nav{
     position: fixed;
     left: 0;
     height: 100vh;
     margin: 0px;
-    background-color: #a2a8d3;
-    border-right: 1px solid #38598b;
+    background-color: var(--color1);
+    border-right: 1px solid var(--color2);
+    overflow-y: auto;
+}
+
+#top-id {
+    color: var(--color2);
+    border-bottom: 1px solid var(--color3);
+    padding-bottom: 46px;
+    padding-top: 26px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+#top-id span{
+    color: #495057;
+    display: block;
+    font-size: 1rem;
+}
+
+#top-id a{
+    color: var(--color3);
+    text-decoration: none;
+    font-size: 1.18rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
 }
 
 nav ul{
     list-style-type: none;
-    left: 0;
-    padding:  0px;
+    padding: 0px;
     margin: 0px;
 }
 
-nav a{
-    color: #38598b;
-    text-decoration: none;
-    padding: 10px;
+nav li{
     display: block;
-    text-align: center;
+    color: var(--color2);
+    padding: 0px;
+    /*
+    border: 1px solid var(--color2);
+    font-size: 1.2rem;
+    font-variant: small-caps;*/
+}
+
+nav ul a{
+    display: block;
+    padding: 34px 23px;
+    border-left: 3px solid transparent;
+    border-bottom: 1px solid var(--color3);
+    text-decoration: none;
+    color: #495057;
+    font-weight: 500;
+    font-size: 0.84rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    transition: all 0.25s ease;
 }
 
 nav a:hover{
-    color: #113f67;
+    color: var(--color3);
 }
 
-nav li{
-    color: #38598b;
-    padding: 20px;
-    border: 1px solid #38598b;
-    font-size: clamp(0.8rem, 1.2vw, 5rem);
-}
-
-nav li:hover{
+nav ul a.active{
+    color: var(--color3);
     background-color: #8187b4;
-    border-right: 4px solid #113f67;
-}
-
-nav a.active{
-    color: #113f67;
     font-weight: bold;
+    border-right: 4px solid var(--color3);
 }
 
 section{
-    min-height: 100vh;
-    margin-left: 220px;
-    padding: 20px;
+    min-height: 150dvh; /*spacing between sections*/
+    margin-left:223px;  /*size of the navbar*/
 }
 
 #about-box{
-    background-color: #e7eaf6;
-    /* border: 2px solid #113f67;
+    background-color: var(--background);
+    /* border: 2px solid var(--color3);
     border-radius: 80px; */
     overflow: auto;
     border-left: none;
-    margin: clamp(5px, 5vw, 100px);
+    margin-left: clamp(5dvw, 10dvw, 20dvw);
+    margin-right: clamp(5dvw, 10dvw, 20dvw);
 }
 
 #about-box img{
     float: left;
     border-radius: 50%;
-    border: 2px solid #113f67;
+    border: 2px solid var(--color3);
     height: auto;
     width: 40dvh;
     margin-right: 60px;
@@ -134,7 +165,7 @@ section{
 
 #about-box h3{
     text-align: center;
-    color: #113f67;
+    color: var(--color3);
 }
 
 #about-box p{
@@ -147,11 +178,11 @@ section{
 }
 
 #publications li{
-    color: #404042;
+    color: var(--text-color);
 }
 
 #publications li a{
-    color: #113f67;
+    color: var(--color3);
     text-decoration: none;
 }
 
@@ -161,32 +192,33 @@ section{
 
 /* We use the box class for the research and contact sections */
 .box{
-    background-color: #a2a8d3;
-    border: 2px solid #113f67;
+    background-color: var(--color1);
+    border: 2px solid var(--color3);
     border-radius: 10px;
-    overflow: auto;
-    margin: clamp(5px, 50px, 150px);
+    overflow:auto;
+    margin-left: clamp(5dvw, 8dvw, 18dvw);
+    margin-right: clamp(5dvw, 8dvw, 18dvw);
 }
+
 
 .box img{
     height: auto;
     width: 50%;
     float: left;
-    margin-right: 30px;
+    margin-right: 20px;
 }
 
 .box p{
     padding: 10px;
     margin: 20px;
-    text-align: justify;
     line-height: 1.4;
 }
 
 .box button{
-    background-color: #e7eaf6;
-    color: #113f67;
+    background-color: var(--background);
+    color: var(--color3);
     border-radius: 5px;
-    border: 2px solid #113f67;
+    border: 2px solid var(--color3);
     text-align: center;
     text-decoration: none;
     display: block;
@@ -212,16 +244,17 @@ section{
     margin-bottom: 20px;
     font-size: 16px;
     font-weight: bold;
-    color: #113f67;
+    color: var(--color3);
+    text-align: center;
 }
 
 .box li a{
-    color: #113f67;
+    color: var(--color3);
     text-decoration: none;
 }
 
 .box li a:hover{
-    color: #38598b;
+    color: var(--color2);
 }
 
 .box svg{
@@ -229,8 +262,36 @@ section{
     width: auto;
 }
 
+#others {
+    background-image: url('images/moebius1.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+#others .box{
+    background-color: var(--background);
+}
+
+#others h2{
+    color: var(--background);
+    text-decoration-color: var(--background);
+    padding-top: 35dvh;
+}
+
+#others p{
+    text-align: center;
+}
+
+#others h4{
+    text-align: center;
+    color: var(--color3);
+    font-size: 1.2rem;
+    margin: 0px;
+    padding: 0px;
+}
+
 footer{
-    color: rgb(142, 139, 145);
+    color: var(--text-color);
     margin-left: 220px;
     text-align: center;
     font-size: small;
@@ -240,13 +301,14 @@ footer{
 /* Media queries for responsive design */
 @media screen and (max-width: 768px) {
     nav{
-        position: sticky;
+        position: fixed;
         top: 0;
         height: auto;
         width: 100%;
-        background-color: #e7eaf6;
         border-right: none;
-        border-bottom: 1px solid #38598b;
+        background-color: var(--background);
+        border-bottom: 1px solid var(--color2);
+        z-index: 1000;
     }
 
     #top-id{
@@ -260,23 +322,33 @@ footer{
         flex-wrap: wrap;
     }
 
-    nav li{
-        padding: 10px;
+    nav ul a {
+        display: inline-block;
+        padding: 12px 18px;
         border: none;
+        /* border-radius: 20px; */
+        text-transform: none;
+        letter-spacing: normal;
+        font-size: 1rem;
+        letter-spacing: 0.02em;
     }
 
-    nav li:hover{
-    background-color: #8187b4;
-    border-bottom: 4px solid #113f67;
-    border-right: none;
-}
+    nav ul a.active{
+        border-right: none;
+        border-bottom: 3px solid var(--color3);
+    }
+
+    nav ul a.hover{
+        border-right: none;
+        border-bottom: 3px solid var(--color3);
+    }
+
 
     #lang-switch{
         position: sticky;
         display: flex;
         justify-content: flex-end;
-        margin-top: 70px;
-        margin-block: 0px;
+        margin-top: 100px;
 }
 
     section{
@@ -285,7 +357,8 @@ footer{
     }
 
     #about-box{
-        border-left: 2px solid #113f67;
+        /* border-left: 2px solid var(--color3); */
+        margin: 0 5px;
     }
 
     #about-box img{
@@ -299,6 +372,10 @@ footer{
     #about-box p{
         margin-left: 0;
         padding: 10px;
+    }
+
+    .box {
+        margin: auto;
     }
 
     .box img{
