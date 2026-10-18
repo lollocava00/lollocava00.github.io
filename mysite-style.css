@@ -58,13 +58,22 @@ body{
 
 h2{
     color: var(--color3);
+    font-size: 2rem;
     text-align: center;
     text-decoration: underline solid var(--color3) 4px;
     text-underline-offset: 10px;
     margin: 40px;
 }
 
-p{color: var(--text-color);}
+h3{
+    font-size: 1.5rem;
+}
+
+
+p{
+    color: var(--text-color);
+    font-size: 1.2rem;
+}
 
 nav{
     position: fixed;
@@ -160,7 +169,7 @@ section{
     border-radius: 50%;
     border: 2px solid var(--color3);
     height: auto;
-    width: 40dvh;
+    width: 250px;
     margin-right: 60px;
 }
 
@@ -170,24 +179,29 @@ section{
 }
 
 #about-box p{
-    padding: 40px;
+    padding: 0 0 20px 0;
     line-height: 1.5;
 }
 
 #publications-list{
-    margin: clamp(5px, 5vw, 100px);
+    margin: clamp(5px, 60px, 100px);
+}
+
+#publications-list p{
+    padding: 0 0 40px 0;
 }
 
 #publications li{
     color: var(--text-color);
 }
 
-#publications li a{
+#publications a{
     color: var(--color3);
     text-decoration: none;
+    font-size: 1.2rem;
 }
 
-#publications li a:hover{
+#publications a:hover{
     text-decoration: underline;
 }
 
@@ -224,9 +238,9 @@ section{
     text-decoration: none;
     display: block;
     font-size: 16px;
-    margin: auto;
     cursor: pointer;
     padding: 10px 20px;
+    margin: auto;
 }
 
 .box button:hover{
@@ -283,10 +297,9 @@ section{
     text-align: center;
 }
 
-#others h4{
+#others h3{
     text-align: center;
     color: var(--color3);
-    font-size: 1.2rem;
     margin: 0px;
     padding: 0px;
 }
