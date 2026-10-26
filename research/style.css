@@ -1,0 +1,205 @@
+:root{
+  --bg:#281440; 
+  --surface:#622665; 
+  --ink:#f2eff2; 
+  --muted:#9c92a9;
+  --head-ink:#f2eff2; 
+  --accent:#c37493; 
+  --line:#9a487a;
+  --nav-w:220px;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+
+html{
+    scroll-padding-top:env(safe-area-inset-top,0px);
+    scroll-behavior:smooth
+}
+*{box-sizing:border-box}
+
+body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+  font-family:"Bricolage Grotesque",system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6
+}
+
+/* Header: half the viewport, fades on scroll */
+header{
+    height:50vh;
+    min-height:360px;
+    background-image: url('images/cosmicweb.webp');
+    background-size: cover;
+    background-position: center;
+    color:var(--head-ink);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:0 24px;
+    text-align:center;
+    will-change:opacity;
+    border-bottom:1px solid var(--line);
+}
+header h1{
+    margin:0 0 40px;
+    font-size:clamp(1.6rem,5vw,4rem);
+    font-weight:400;
+    letter-spacing:-.03em;
+    line-height:1
+}
+.levels{
+    display:flex;
+    gap:20px;
+    align-items:flex-start;
+    justify-content:center;
+    flex-wrap:wrap
+}
+.level{position:relative;
+    width:200px}
+.level a{
+    display:block;
+    padding:12px 0;
+    border:2px solid var(--head-ink);
+    border-radius:999px;
+    color:var(--head-ink);
+    text-decoration:none;
+    font-weight:600;
+    font-size:1.05rem;
+    transition:background .2s,color .2s,border-color .2s;
+}
+.level a:hover,.level a:focus-visible{
+    background:var(--accent);
+    border-color:#14282b;
+    color:#14282b;
+    outline:none
+}
+.level p{
+  position:absolute;
+  top:100%; left:0; right:0;
+  margin:12px 0 0;
+  font-size:1rem;
+  line-height:1.45;
+  opacity:0;
+  transform:translateY(-4px);
+  pointer-events:none;
+  transition:opacity .2s,transform .2s;
+  color:var(--head-ink);
+  border-color:#14282b;
+}
+.level:hover p,.level:focus-within p{opacity:1;transform:none}
+
+/* Fixed sidebar: sits under the header, grows to full height once header is gone */
+nav{
+    position:fixed;
+    left:0;
+    top:var(--nt,50vh);
+    width:var(--nav-w);
+    height:calc(100% - var(--nt,50vh));
+    background:var(--surface);
+    border-right:1px solid var(--line);
+    padding:28px 20px;
+    padding-bottom:calc(28px + env(safe-area-inset-bottom,0px));
+    overflow-y:hidden;
+    z-index:10;
+}
+nav strong{
+    display:block;
+    margin-bottom:16px;
+    font-size:1.1rem
+}
+
+nav strong a{
+    color: var(--head-ink);
+    text-decoration: none;
+}
+
+nav strong a:hover{
+    color: #14282b;
+}
+
+nav #anav{
+    display:block;
+    padding:28px 24px;
+    margin:0 -12px 2px;
+    letter-spacing: 0.12em;
+    border-radius:8px;
+    color:var(--muted);
+    text-decoration:none;
+    border-bottom: 1px solid var(--line);
+}
+nav #anav:hover,nav #anav:focus-visible{
+    background:var(--bg);
+    color:var(--ink);
+    outline:none
+}
+nav #anav.active{
+    color:var(--ink);
+    font-weight:600;
+    box-shadow:inset 3px 0 0 var(--accent)
+}
+
+
+
+main{margin-left:var(--nav-w);padding:0 clamp(20px,5vw,64px)}
+
+/* images*/
+#euclid-gals {
+    margin: 20px 0 0 0;
+    width: 100%;
+}
+
+#light-cone {
+    margin: 20px 0 0 0;
+    width: 100%;
+}
+
+/* Ballloon animation */
+canvas{display:block;width:100%;border-radius:10px}
+#balloon{height:380px}
+#galaxy{height:380px;background:#12163a}
+.ctl{display:flex;align-items:center;gap:12px;margin-top:16px}
+.ctl span{font-size:14px;color:var(--mute);min-width:52px}
+.ctl span:last-child{text-align:right}
+input[type=range]{flex:1;height:32px;background:transparent;accent-color:var(--acc);cursor:pointer}
+/*  #####################################################  */
+
+section{max-width:68ch;padding:72px 0 48px;border-bottom:1px solid var(--line);min-height:70vh}
+
+section:last-child{border-bottom:0;min-height:100vh}
+
+h2{font-size:2rem;margin:0 0 12px;letter-spacing:-.02em}
+
+section p,section li{font-size:1.05rem}
+
+ul{padding-left:1.2em}
+
+footer{
+    color: var(--muted);
+    text-align: center;
+    font-size: small;
+}
+
+/* Phones: sidebar becomes a top bar. It sits under the header, then sticks to the top once the header has scrolled away. */
+@media (max-width:700px){
+  html{scroll-padding-top:calc(64px + env(safe-area-inset-top,0px))}
+  header{position:relative;z-index:11;height:auto;min-height:50vh;padding:32px 20px}
+  header h1{margin-bottom:28px}
+  .levels{flex-direction:column;align-items:center;gap:12px}
+  .level{width:min(240px,100%)}
+  .level p{background:var(--head-bg);border-radius:12px;padding:10px 12px;margin-top:6px;z-index:2;box-shadow:0 6px 20px rgba(0,0,0,.35)}
+  nav{
+    top:var(--nt,50vh);left:0;right:0;width:100%;height:auto;
+    display:flex;align-items:center;gap:4px;overflow-x:auto;overflow-y:hidden;
+    padding:8px 12px;border-right:0;border-bottom:1px solid var(--line);white-space:nowrap;
+  }
+  nav.stuck{padding-top:calc(8px + env(safe-area-inset-top,0px))}
+  nav strong{margin:0 8px 0 0;font-size:1rem}
+  nav a{display:inline-block;margin:0;padding:8px 12px;flex:none}
+  nav a.active{box-shadow:inset 0 -3px 0 var(--accent);border-radius:8px 8px 0 0}
+  main{margin-left:0;padding-top:56px}
+  section{padding-top:48px}
+}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}

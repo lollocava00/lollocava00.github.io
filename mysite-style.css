@@ -388,6 +388,10 @@ footer{
         padding: 10px;
     }
 
+    #publications-list{
+        margin: 0 10px 0 10px;
+}
+
     .box {
         margin: auto;
     }
