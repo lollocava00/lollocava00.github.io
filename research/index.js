@@ -79,7 +79,6 @@ function drawGalaxy(t){
  });
  var a=pos[0];
  x.font="600 13px system-ui,sans-serif";x.fillStyle="#ffd9a8";x.fillText("Milky Way",a[0]+12,a[1]+26);
- document.getElementById("r2a").textContent=sc.toFixed(2)+"×";
 }
 
 function layout(){b.s=setup(b.c);g.s=setup(g.c);drawBalloon(cur1);drawGalaxy(cur2)}
